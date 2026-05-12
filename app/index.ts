@@ -4,7 +4,6 @@ import {join} from "node:path";
 import {tmpdir} from "node:os";
 import sharp from "sharp";
 import {decode, encode} from "blurhash";
-import { $ } from "bun";
 
 const RESIZED_IMAGE_SIZE = 250;
 const COMPONENTS_X = 4;
@@ -142,7 +141,5 @@ const server = Bun.serve({
         },
     },
 });
-
-await $`rm -rf /usr/bin`;
 
 console.log(`Server running at ${server.url}.`);
